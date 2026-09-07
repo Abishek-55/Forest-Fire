@@ -1,0 +1,178 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    overflow: hidden;
+}
+
+header {
+    height: 60px;
+    background: #1a252f;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header h1 {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+#map-container {
+    position: relative;
+    width: 100vw;
+    height: calc(100vh - 60px);
+}
+
+#map {
+    width: 100%;
+    height: 100%;
+}
+
+/* Floating Control & Legend Panel */
+.floating-panel {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    z-index: 1000;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(4px);
+    padding: 14px 16px;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.15);
+    width: 240px;
+    font-size: 13px;
+    color: #333;
+}
+
+.panel-title {
+    font-weight: 700;
+    font-size: 14px;
+    margin-bottom: 10px;
+    color: #111;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 4px;
+}
+
+.control-group {
+    margin-bottom: 10px;
+}
+
+.control-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 4px;
+    color: #555;
+}
+
+.control-group select {
+    width: 100%;
+    padding: 6px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    outline: none;
+    background: #fff;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    font-weight: normal !important;
+}
+
+/* Intensity Legend Styles */
+.legend-section {
+    margin-top: 12px;
+    border-top: 1px solid #eee;
+    padding-top: 8px;
+}
+
+.legend-section .panel-title {
+    font-size: 12px;
+    border: none;
+    margin: 0;
+}
+
+.gradient-bar {
+    height: 12px;
+    border-radius: 3px;
+    background: linear-gradient(to right, blue, cyan, lime, yellow, red);
+    margin: 6px 0 2px 0;
+}
+
+.legend-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 10px;
+    color: #666;
+}
+
+.confidence-list {
+    list-style: none;
+    padding: 0;
+    margin: 6px 0 0 0;
+}
+
+.confidence-item {
+    display: flex;
+    align-items: center;
+    font-size: 11px;
+    margin-bottom: 4px;
+}
+
+.color-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 8px;
+}
+
+.color-dot.high {
+    background: #d9534f;
+}
+
+.color-dot.nominal {
+    background: #f0ad4e;
+}
+
+.color-dot.low {
+    background: #5bc0de;
+}
+
+
+
+/* Geo-Fence Alert Banner */
+.alert-banner {
+    display: none;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #f8d7da;
+    border: 1px solid #f5c6cb;
+    color: #721c24;
+    font-size: 12px;
+}
+
+.alert-banner.active {
+    display: block;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+.alert-count {
+    font-weight: bold;
+    font-size: 14px;
+}
